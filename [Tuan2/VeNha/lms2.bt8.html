@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Structure - Khoa Công Nghệ Thông Tin Kinh Doanh</title>
+<style>
+	*:hover { outline: 5px solid rgba(255,0,0,0.2); }
+
+	section, header, hgroup, footer, nav, article, aside, figure, figcaption {
+  		border: 1px solid #ddd;
+  		background-color: rgba(153,153,153,.1);
+  		display: block;
+  		padding: 5px;
+  		margin: 5px;
+  		border-radius: 5px;
+  	}
+  	
+  	section, aside {
+  		float: left;
+  	}
+  	header, footer {
+  		clear: both;
+  	}
+  	
+  	#pagecontent {
+  		margin: 0 auto;
+  		max-width: 1045px;
+  		min-width: 480px;
+  		width: 100%;
+  	}
+  
+  	#pageheader, #pagefooter { 
+  		max-width: 1020px;
+  		min-width: 480px;
+  		width: 100%;
+  	}
+  	#sectioncontent1 {
+  		max-width: 600px;
+  		min-width: 400px;
+  		width: 100%;
+  	}
+  	
+  	#asidecontent1 {
+  		max-width: 400px;
+  		width: 100%;
+  	}
+
+    .sitename a {
+        text-decoration: none;
+        color: black;
+    }
+    .logo-container {
+        text-align: center;
+        padding: 10px 0;
+    }
+    .logo-container img {
+        max-width: 100%;
+        height: auto;
+    }
+    .main-nav p {
+        text-align: center;
+        margin: 0;
+    }
+    .main-nav a {
+        padding: 0 10px;
+        text-decoration: none;
+        color: #0066cc;
+    }
+    .article-link {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #0066cc;
+    }
+    .aside-link {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #0066cc;
+        display: block; 
+        padding: 5px 0;
+        background-color: rgba(255, 255, 255, 0.8); 
+    }
+    .aside-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    #pagefooter {
+        text-align: center;
+        background: #f3f3f3;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div id="pagecontent">
+
+    <header id="pageheader">
+        <hgroup id="pagehgroup">
+            <h1 class="sitename"><a href="/" rel="home" title="Home">HTML5 Structure</a></h1>
+            <h2 class="subtitle">Khoa Công Nghệ Thông Tin Kinh Doanh - UEH</h2>
+        </hgroup>
+        
+        <div class="logo-container">
+            <img src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/BIT_logo.png" alt="BIT UEH Logo">
+        </div>
+
+        <nav id="globalnav" class="main-nav">
+            <a href="#">Chương trình Đại học</a>
+            <a href="#">CT Liên thông Đại học</a>
+            <a href="#">Chương trình Sau đại học</a>
+            <a href="#">Chương trình Quốc tế</a>
+        </nav>
+    </header>
+
+    <section id="sectioncontent1">
+        
+        <header id="sectionheader1">
+            <h2>Chương trình Đại học</h2>
+        </header>
+
+        <article id="articlecontent1">
+            <header id="articleheader1">
+                <a href="#" class="article-link">Hệ thống hoạch định nguồn lực doanh nghiệp (ERP)</a>
+            </header>
+
+            <p>Hệ thống ERP giúp doanh nghiệp tích hợp các quy trình như kế toán, nhân sự, sản xuất, chuỗi cung ứng trên cùng một nền tảng, giúp tối ưu hiệu quả và giảm chi phí vận hành.</p>
+            
+            <figure id="figure1">
+                <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2023/02/33-CU-NHAN-HE-THONG-HOACH-DINH-NGUON-LUC-DOANH-NGHIEP.png" alt="Hình ảnh ERP">
+                <figcaption>Sinh viên sẽ được học về phân tích quy trình nghiệp vụ, mô hình hóa dữ liệu và triển khai các giải pháp ERP hiện đại.</figcaption>
+            </figure>
+            
+            <div> 
+                <header id="articleheader2">
+                    <h3>Môn học tiêu biểu</h3>
+                </header>
+                <p>Phân tích hệ thống thông tin, Quản trị dự án CNTT, Hệ thống ERP SAP cơ bản, Mô hình hóa quy trình doanh nghiệp.</p>
+                <figure id="fugure2">
+                    <p>Hình minh họa</p>
+                    <figcaption>Môi trường học tập hiện đại, tương tác thực tế với doanh nghiệp.</figcaption>
+                </figure>
+                <footer>
+                    <p>Thông tin tham khảo: <a href="https://bit.ueh.edu.vn" target="_blank">bit.ueh.edu.vn</a></p>
+                </footer>
+            </div>
+            
+            <footer id="articlefooter1">
+                <p>Trang 3 / 4</p>
+            </footer>
+        </article>
+    </section>
+
+    <aside id="asidecontent1">
+        <header>
+            <h2>Các chuyên ngành liên quan</h2>
+        </header>
+
+        <article>
+            <header>
+                <a href="http://bit.ueh.edu.vn/chuyen-nganh-he-thong-thong-tin-kinh-doanh/" class="aside-link" target="_blank">Hệ thống thông tin kinh doanh</a>
+            </header>
+            <div class="aside-image">
+                <img src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/mis-300x150.jpg" alt="Hệ thống thông tin kinh doanh">
+            </div>
+            <p>Chuyên ngành đào tạo kỹ năng phân tích, thiết kế và triển khai hệ thống thông tin phục vụ hoạt động quản trị doanh nghiệp.</p>
+            <footer><p>Aside Article footer</p></footer>
+        </article>
+
+        <article>
+            <header>
+                <a href="http://bit.ueh.edu.vn/chuyen-nganh-thuong-mai-dien-tu/" class="aside-link" target="_blank">Thương mại điện tử</a>
+            </header>
+            <div class="aside-image">
+                <img src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/e-commerce-300x150.jpg" alt="Thương mại điện tử">
+            </div>
+            <p>Chuyên ngành TMĐT giúp sinh viên hiểu về kinh doanh trực tuyến, marketing số và nền tảng thương mại đa kênh.</p>
+            <footer><p>Aside Article footer</p></footer>
+        </article>
+
+        <article>
+            <header>
+                <a href="http://bit.ueh.edu.vn/cong-nghe-phan-mem/" class="aside-link" target="_blank">Kỹ thuật phần mềm</a>
+            </header>
+            <div class="aside-image">
+                <img src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/bit-300x150.jpg" alt="Kỹ thuật phần mềm">
+            </div>
+            <p>Đào tạo cử nhân nắm vững kiến thức lập trình, quản lý dự án và phát triển phần mềm hiện đại đáp ứng nhu cầu chuyển đổi số.</p>
+            <footer><p>Aside Article footer</p></footer>
+        </article>
+
+        <footer>
+            <p>Liên hệ: <a href="mailto:bit@ueh.edu.vn">bit@ueh.edu.vn</a> | Website: <a href="https://bit.ueh.edu.vn" target="_blank">bit.ueh.edu.vn</a></p>
+        </footer>
+    </aside>
+
+    <footer id="pagefooter">
+        <p>© 2025 Khoa Công Nghệ Thông Tin Kinh Doanh - Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)</p>
+        <p>Địa chỉ: 279 Nguyễn Tri Phương, Quận 10, TP.HCM</p>
+    </footer>
+</div>
+</body>
+</html>
