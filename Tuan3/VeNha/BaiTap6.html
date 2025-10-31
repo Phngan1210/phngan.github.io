@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 6</title>
+  <style>
+    /* === 1. TOÀN BỘ NỘI DUNG TRONG SECTION === */
+    .portfolio {
+      font-family: Arial, sans-serif;     
+      text-align: center;                 
+      padding: 20px;                     
+      background-color: #f5f5f5;         
+    }
+
+    /* === 2. TIÊU ĐỀ: MY PORTFOLIO === */
+    h2 {
+      font-size: 28px;                    
+      margin: 0 0 15px 0;               
+      color: #333;                       
+    }
+
+    /* === 3. MENU TAB: All, Web App, UI/UX, ... === */
+    .list-tab {
+      list-style: none;                   /* XÓA DẤU CHẤM */
+      padding: 0;                         /* XÓA padding */
+      margin: 0 0 25px 0;                
+      background-color: #e0e0e0;         
+      display: inline-block;              /* Căn giữa khối */
+      border-radius: 8px;                 /* BO GÓC */
+      overflow: hidden;                   /* Ẩn viền thừa */
+    }
+
+    .list-tab li {
+      display: inline-block;              /* NẰM NGANG */
+    }
+
+    .list-tab a {
+      display: block;                     /* Chiếm toàn bộ <li> */
+      padding: 10px 18px;                 /* Khoảng cách trong */
+      color: #555;                       
+      text-decoration: none;            
+      font-size: 14px;                   
+      transition: all 0.3s;               /* Hiệu ứng mượt */
+    }
+
+    /* === 4. DANH SÁCH ẢNH (3x3) === */
+    .galerry {
+      list-style: none;                  
+      padding: 0;                        
+      margin: 0;                         
+      display: flex;                      /* DÙNG FLEX ĐỂ CHIA 3 CỘT */
+      flex-wrap: wrap;                    /* Xuống dòng khi hết chỗ */
+      justify-content: center;            
+      gap: 20px;                          /* KHOẢNG CÁCH GIỮA CÁC ẢNH */
+    }
+
+    .galerry li {
+      width: 350px;                      
+      height: 260px;                      
+      overflow: hidden;                   /* ẨN PHẦN TRÀN */
+      border: 1px solid #ddd;            
+      border-radius: 5px;                 /* BO GÓC NHỎ */
+    }
+
+    .galerry img {
+      width: 100%;                        
+      height: 100%;                       
+      object-fit: cover;                  
+      display: block;                     
+    }
+  </style>
+</head>
+<body>
+
+  <section class="portfolio">
+    <!-- Tiêu đề -->
+    <h2>MY PORTFOLIO</h2>
+
+    <!-- Menu tab -->
+    <ul class="list-tab">
+      <li><a href="#">All</a></li>
+      <li><a href="#">Web App</a></li>
+      <li><a href="#">UI/UX</a></li>
+      <li><a href="#">Graphics Design</a></li>
+      <li><a href="#">Mobile App</a></li>
+      <li><a href="#">Branding</a></li>
+      <li><a href="#">Marketing</a></li>
+    </ul>
+
+    <!-- Gallery 3x3 -->
+    <ul class="galerry">
+    <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 1"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 2"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 3"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 4"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 5"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 6"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 7"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 8"></a></li>
+      <li><a href="#"><img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Portfolio 9"></a></li>
+    </ul>
+  </section>
+
+</body>
+</html>

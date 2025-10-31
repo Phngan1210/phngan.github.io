@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4</title>
+  <style>
+    /* 1. Xóa dấu chấm đầu dòng của <ul> */
+    ul {
+      list-style: none;           /* Không hiển thị bullet */
+      padding: 0;                 /* Xóa padding mặc định */
+      margin: 0;                  /* Xóa margin mặc định */
+    }
+
+    /* 2. Hiển thị các <li> trên cùng một hàng */
+    li {
+      display: inline-block;      /* Các mục nằm ngang */
+    }
+
+    /* 3. Định dạng thẻ <a> giống hình */
+    a {
+      display: block;                    /* Chiếm toàn bộ chiều rộng của <li> */
+      padding: 10px 30px;                /* Khoảng cách trong: trên-dưới 10px, trái-phải 30px */
+      background-color: #00ccff;         
+      color: #003366;                    
+      font-family: serif;               
+      font-size: 16px;                   /* Kích thước chữ rõ ràng */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">TMDT</a></li>
+    <li><a href="#">ERP</a></li>
+    <li><a href="#">MIS</a></li>
+    <li><a href="#">DS</a></li>
+  </ul>
+
+</body>
+</html>

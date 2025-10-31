@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 7 - Layout Wrapper</title>
+  <style>
+    /* === 1. TOÀN BỘ TRANG === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;           /* Nền xám nhạt – giống hình */
+    }
+
+    /* === 2. WRAPPER: CĂN GIỮA, VIỀN ĐEN, ĐỔ BÓNG === */
+    #wrapper {
+      width: 700px;
+      margin: 50px auto;
+      border: 2px solid #000;              /* Viền đen đậm */
+      background-color: #fff;
+      box-shadow: 10px 10px 20px rgba(0,0,0,0.3); /* ĐỔ BÓNG – giống hệt hình */
+      overflow: hidden;
+    }
+
+    /* === 3. HEADER: VIỀN DƯỚI === */
+    header {
+      border-bottom: 2px solid #000;
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* === 4. NAV NGANG: VIỀN DƯỚI === */
+    nav {
+      border-bottom: 2px solid #000;
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* === 5. MAIN: CHIA 2 CỘT === */
+    main {
+      display: flex;
+      min-height: 280px;                   /* Đảm bảo chiều cao rõ ràng */
+    }
+
+    /* === 5.1. SIDEBAR TRÁI (NAV) === */
+    main > nav {
+      width: 180px;
+      border-right: 2px solid #000;        /* Viền đen phải */
+      padding: 25px 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* === 5.2. NỘI DUNG CHÍNH (MAIN) === */
+    main > main {
+      flex: 1;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* === 6. FOOTER: VIỀN TRÊN === */
+    footer {
+      border-top: 2px solid #000;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* === ĐẢM BẢO KÍCH THƯỚC CHUẨN === */
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === HTML ĐÚNG NHƯ ĐỀ BÀI – KHỐI LỒNG NHAU Y CHANG HÌNH === -->
+  <div id="wrapper">
+    <header>header</header>
+    <nav>nav</nav>
+    <main>
+      <nav>nav</nav>
+      <main>main</main>
+    </main>
+    <footer>footer</footer>
+  </div>
+
+</body>
+</html>
