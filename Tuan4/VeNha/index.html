@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập về nhà - Tuần 4</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffeaf4, #fff0f7, #ffffff);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(255, 182, 193, 0.3);
+      padding: 40px;
+      animation: fadeIn 1s ease;
+      transition: all 0.4s ease; /* Hiệu ứng mượt khi container thay đổi */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #d81b60;
+      margin-bottom: 15px;
+      font-size: 30px;
+      transition: all 0.3s ease; /* Làm mượt khi đổi màu/scale */
+    }
+
+    /* Hover: Đổi màu và phóng to nhẹ khi rê chuột */
+    h1:hover {
+      color: #ec407a;
+      transform: scale(1.03);
+      text-shadow: 0 0 10px rgba(236, 64, 122, 0.2);
+    }
+
+    /* =======================
+       PHẦN THÔNG TIN CÁ NHÂN
+    ======================== */
+    .profile {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #f48fb1;
+      object-fit: cover;
+      transition: all 0.4s ease-in-out; /* Mượt khi ảnh phóng to */
+    }
+
+    /* Hover: ảnh phóng to + xoay nhẹ + đổ bóng */
+    .profile img:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 17px;
+      line-height: 1.6;
+      transition: all 0.3s ease; /* Mượt khi chữ dịch chuyển */
+    }
+
+    /* Hover: chữ chuyển màu hồng và trượt nhẹ sang phải */
+    .info p:hover {
+      color: #ec407a;
+      transform: translateX(5px);
+    }
+
+    /* =======================
+       NÚT MẠNG XÃ HỘI
+    ======================== */
+    .social {
+      margin-top: 10px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 8px;
+      color: #d81b60;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #f48fb1;
+      padding: 6px 14px;
+      border-radius: 30px;
+      transition: all 0.3s ease-in-out; /* Mượt khi đổi màu/nền */
+    }
+
+    /* Hover: nền hồng nhạt, chữ trắng, nổi lên nhẹ */
+    .social a:hover {
+      background: #f8bbd0;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(216, 27, 96, 0.3);
+    }
+
+    h2 {
+      color: #d81b60;
+      border-left: 5px solid #f48fb1;
+      padding-left: 10px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover: đổi màu và tăng khoảng cách giữa các ký tự */
+    h2:hover {
+      color: #ec407a;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      padding: 0;
+    }
+
+    li a {
+      display: block;
+      background: #fff0f7;
+      color: #d81b60;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease; /* Mượt khi hover */
+      box-shadow: 0 2px 5px rgba(255,182,193,0.2);
+    }
+
+    /* Hiệu ứng ánh sáng lướt ngang */
+    li a::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transition: all 0.6s ease;
+    }
+
+    /* Khi hover: ánh sáng di chuyển qua thẻ */
+    li a:hover::before {
+      left: 100%;
+    }
+
+    /* Hover: đổi nền, phóng to nhẹ, đổ bóng */
+    li a:hover {
+      background: #f48fb1;
+      color: white;
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 6px 12px rgba(216,27,96,0.3);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 15px;
+      color: #666;
+      transition: all 0.3s ease; /* Mượt khi đổi màu */
+    }
+
+    /* Hover: đổi màu và giãn chữ */
+    footer:hover {
+      color: #d81b60;
+      letter-spacing: 0.5px;
+    }
+
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+      h1 { font-size: 24px; }
+      li a { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>BÀI TẬP VỀ NHÀ - TUẦN 4</h1>
+
+    <div class="profile">
+      <img src="https://cdn.tienphong.vn/images/a6bf4f60924201126af6849ca45a3980829e755c2dcb0e55076cfd0aac7eb95b60fabb78ba1556eca58f26a294224a446276a87a6b19a73a601b1833d307eeb0e1ea4bd39c695733b513a3985dfeb63f/pamela-hai-duong-pt-2484.jpg" alt="Ảnh cá nhân">
+      <div class="info">
+        <p><strong>Họ và tên:</strong> Lê Trần Phương Ngân</p>
+        <p><strong>MSSV:</strong> 31231021930</p>
+        <p><strong>Lớp:</strong> EEP002</p>
+      </div>
+
+      <div class="social">
+        <a href="https://www.facebook.com/phngannn1210/" target="_blank">Facebook</a>
+        <a href="https://github.com/Phngan1210" target="_blank">GitHub</a>
+        <a href="mailto:nganle.312031021930@ueh.edu.vn">Email</a>
+      </div>
+    </div>
+    <h2>Danh sách bài tập</h2>
+    <ul>
+        <li><a href="BaiTap1.html" target="_blank">Bài 1</a></li>
+        <li><a href="BaiTap2.html" target="_blank">Bài 2</a></li>
+        <li><a href="BaiTap3.html" target="_blank">Bài 3</a></li>
+    </ul>
+  </div>
+
+
+  <footer>
+    © 2025 - Phát triển ứng dụng Web | Trường Đại học Kinh tế TP.HCM (UEH)
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bài 2</title>
+  <style>
+    /* === CƠ BẢN CHO TẤT CẢ VIEW === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+      text-align: center;
+    }
+    h2 { margin: 30px 0 10px; color: #2c3e50; }
+
+    .view {
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+      border: 8px solid #fff;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+      background: #fff;
+    }
+    .view img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: all 0.4s ease;
+    }
+    .view .mask, .view .content {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+    .view h3 {
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      padding: 10px;
+      background: rgba(0,0,0,0.7);
+      margin: 15px 40px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .view p {
+      font-style: italic;
+      font-size: 13px;
+      color: #fff;
+      padding: 0 30px;
+      margin-top: 5px;
+    }
+    .view a.info {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .view a.info:hover {
+      background: #e74c3c;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+
+    /*  VÍ DỤ 1  */
+    /* i. Màu nền: xanh nhạt */
+    /* ii. Hover: chạy từ TRÁI sang PHẢI */
+    .view-first .mask {
+      background-color: rgba(173, 216, 230, 0.9); /* xanh nhạt */
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.5s ease-in-out;
+    }
+    .view-first h3, .view-first p, .view-first a.info {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.4s ease-in-out;
+    }
+    /* Khi hover: hiện overlay và text trượt vào */
+    .view-first:hover .mask {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .view-first:hover img {
+      transform: scale(1.1);
+    }
+    .view-first:hover h3,
+    .view-first:hover p,
+    .view-first:hover a.info {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .view-first:hover p { transition-delay: 0.1s; }
+    .view-first:hover a.info { transition-delay: 0.2s; }
+    /* VÍ DỤ 7 */
+    /* i. Sau hover: vẫn giữ hình người mẫu */
+    /* ii. Hover Style #1: xoay giống hình nền */
+    .view-seventh img {
+      transition: all 0.6s ease-out;
+      opacity: 1;
+    }
+    .view-seventh .mask {
+      background-color: rgba(46, 125, 50, 0.8); /* xanh lá đậm */
+      opacity: 0;
+      transform: translateY(-200px) rotate(180deg);
+      transition: all 0.5s ease-out;
+    }
+    .view-seventh h3,
+    .view-seventh p,
+    .view-seventh a.info {
+      transform: translateY(-100px);
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Hover: xoay + giữ hình */
+    .view-seventh:hover img {
+      transform: rotate(720deg) scale(0.8);
+      opacity: 1; /* GIỮ HÌNH */
+    }
+    .view-seventh:hover .mask {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+      transition-delay: 0.3s;
+    }
+    .view-seventh:hover h3 { transform: translateY(0); opacity: 1; transition-delay: 0.6s; }
+    .view-seventh:hover p  { transform: translateY(0); opacity: 1; transition-delay: 0.5s; }
+    .view-seventh:hover a.info { transform: translateY(0); opacity: 1; transition-delay: 0.7s; }
+
+    /* TỰ THIẾT KẾ */
+    .view-custom {
+      background: linear-gradient(45deg, #1a1a2e, #16213e);
+      border: 8px solid transparent;
+      transition: all 0.5s;
+    }
+    .view-custom img {
+      filter: grayscale(100%);
+      transition: all 0.6s ease;
+    }
+    .view-custom .mask {
+      background: rgba(0, 255, 255, 0.1);
+      opacity: 0;
+      backdrop-filter: blur(5px);
+      transition: all 0.6s ease;
+    }
+    .view-custom h3, .view-custom p, .view-custom a.info {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.5s ease;
+    }
+    .view-custom a.info {
+      background: transparent;
+      border: 2px solid #0ff;
+      box-shadow: 0 0 10px #0ff;
+    }
+/* Hover: border sáng lên, hình rõ nét hơn, text nhấp nháy nhẹ */
+    .view-custom:hover {
+      border-color: #0ff;
+      box-shadow: 0 0 30px #0ff, 0 0 60px rgba(0, 255, 255, 0.5);
+      transform: translateY(-5px);
+    }
+    .view-custom:hover img {
+      filter: grayscale(0%) brightness(1.2);
+      transform: scale(1.15);
+    }
+    .view-custom:hover .mask {
+      opacity: 1;
+    }
+    .view-custom:hover h3,
+    .view-custom:hover p,
+    .view-custom:hover a.info {
+      opacity: 1;
+      transform: scale(1);
+      animation: pulse 1.5s infinite;
+    }
+/* Hiệu ứng nhấp nháy sáng nhẹ cho chữ neon */
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #0ff; }
+      50% { text-shadow: 0 0 30px #0ff, 0 0 50px #0ff; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Ví dụ 1 - Chạy từ trái sang phải (xanh nhạt)</h2>
+  <div class="view view-first">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Người 1" />
+    <div class="mask">
+      <h3>Cầu thủ</h3>
+      <p>Công Phượng</p>
+      <a href="#" class="info">Xem thêm</a>
+    </div>
+  </div>
+
+  <h2>Ví dụ 7 - Giữ hình + Xoay giống nền</h2>
+  <div class="view view-seventh">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Người mẫu" />
+    <div class="mask">
+      <h3>Model</h3>
+      <p>Jenifer</p>
+      <a href="#" class="info">Chi tiết</a>
+    </div>
+  </div>
+
+  <h2>Tự thiết kế - Neon Pulse Effect</h2>
+  <div class="view view-custom">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Neon" />
+    <div class="mask">
+      <h3>Cyber Future</h3>
+      <p>Hiệu ứng neon phát sáng khi hover</p>
+      <a href="#" class="info">Khám phá</a>
+    </div>
+  </div>
+
+</body>
+</html>
